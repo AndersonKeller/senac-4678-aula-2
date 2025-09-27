@@ -1,18 +1,22 @@
 function getUser(){
-    const email = document.querySelector("#email")
+    const user = document.querySelector("#user")
     const emailLocal = localStorage.getItem("user")
-    email.innerText = emailLocal
+    user.innerText = emailLocal
 }
 getUser()
 
 function logout(){
     const buttonLogout = document.querySelector("#logout")
-    console.log(buttonLogout) 
     buttonLogout.addEventListener("click",()=>{
-        console.log("loogout")
-        localStorage.clear()
-           const email = document.querySelector("#email")
-           email.innerText = ""
+        localStorage.removeItem("user")
+        const user = document.querySelector("#user")
+        user.innerText = ""
     })
+    // buttonLogout.addEventListener("click",()=>{
+       
+    //     localStorage.clear()
+    //        const email = document.querySelector("#email")
+    //        email.innerText = ""
+    // })
 }
 logout()
